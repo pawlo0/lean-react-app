@@ -9,7 +9,7 @@ const githubDownload = util.promisify(download);
 // grab arguments
 const args = process.argv.slice(2);
 const projectLocation = args[0] && args[0].trim();
-const withInstall = args[1] === "-i" && "--install" ? true : false;
+const withInstall = args[1] === "-n" && "--noinstall" ? false : true;
 
 const main = async () => {
     // check that there is a project location provided
@@ -60,9 +60,11 @@ const main = async () => {
 
 
     // Install packages
-    // process.chdir(projectPath);
-    //exec.execSync('npm install --save react react-dom', { stdio: [0, 1, 2] });
-    //exec.execSync('npm install --save-dev parcel-bundler @babel/preset-react @babel/plugin-proposal-class-properties', { stdio: [0, 1, 2] });
+    if (withInstall) {
+        process.chdir(projectPath);
+        exec.execSync('npm install', { stdio: [0, 1, 2] });
+
+    }
 
 }
 
