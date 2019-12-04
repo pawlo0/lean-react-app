@@ -19,5 +19,8 @@
     "bugs": {
         "url": "https://github.com/pawlo0/lean-react-app/issues"
     },
-    "homepage": "https://github.com/pawlo0/lean-react-app#readme"
+    "homepage": "https://github.com/pawlo0/lean-react-app#readme",
+    "dependencies": {
+        "download-git-repo": "^3.0.2"
+    }
 }
