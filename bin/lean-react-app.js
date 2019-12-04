@@ -2,7 +2,9 @@
 const path = require("path");
 const fs = require("fs");
 const exec = require('child_process');
+const util = require("util");
 const download = require("download-git-repo");
+const githubDownload = util.promisify(download);
 
 // grab arguments
 const args = process.argv.slice(2);
