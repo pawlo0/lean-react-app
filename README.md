@@ -10,3 +10,9 @@ Try by running this in the terminal:
 npx lean-react-app my-app
 ```
 
+
+If you just want to download template without installing packages:
+
+```
+npx lean-react-app my-app -n
+```
