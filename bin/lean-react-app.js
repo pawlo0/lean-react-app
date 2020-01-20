@@ -10,7 +10,10 @@ const HTMLparser = require('node-html-parser');
 // grab arguments
 const args = process.argv.slice(2);
 const projectLocation = args[0] && args[0].trim();
-const withInstall = args[1] === "-n" && "--noinstall" ? false : true;
+for (let i=1; i< args.length; i++) {
+    let withInstall = args[i] === "-n" && "--noinstall" ? false : true;
+    let withTesting = args[i] === "-t" && "--withTesting" ? true : false;
+}
 
 const main = async () => {
     // check that there is a project location provided
@@ -38,7 +41,11 @@ const main = async () => {
 
     // initiate project
     process.stdout.write("Downloading template project...");
-    await githubDownload("pawlo0/lean-react-app-template", projectPath);
+    if (withTesting) {
+        await githubDownload("pawlo0/lean-react-app-template#withTesting", projectPath);
+    } else {
+        await githubDownload("pawlo0/lean-react-app-template", projectPath);
+    }
     process.stdout.write(" DONE\n\n");
 
 
