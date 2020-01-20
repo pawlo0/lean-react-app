@@ -9,10 +9,12 @@ const HTMLparser = require('node-html-parser');
 
 // grab arguments
 const args = process.argv.slice(2);
+let withTesting = false;
+let withInstall = true;
 const projectLocation = args[0] && args[0].trim();
-for (let i=1; i< args.length; i++) {
-    let withInstall = args[i] === "-n" && "--noinstall" ? false : true;
-    let withTesting = args[i] === "-t" && "--withTesting" ? true : false;
+for (let i = 1; i < args.length; i++) {
+    if (args[i] === "-n") { withInstall = false };
+    if (args[i] === "-t") { withTesting = true };
 }
 
 const main = async () => {
