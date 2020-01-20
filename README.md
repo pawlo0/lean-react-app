@@ -15,6 +15,13 @@ npx lean-react-app my-app
 ```
 
 
+If you want to include testing with Jest:
+```
+npx lean-react-app my-app -t
+```
+
+
+
 If you just want to download template without installing packages:
 
 ```
