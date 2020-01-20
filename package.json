@@ -4,7 +4,7 @@
     "description": "A simple and lean React template",
     "bin": "./bin/lean-react-app.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"No test specified\""
     },
     "repository": {
         "type": "git",
